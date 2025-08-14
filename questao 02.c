@@ -1,19 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int N;
-    int numero = 1; 
-    
-    printf("informe número inteiro positivo: ");
+    int N, num = 1, linha = 1;
+
+    printf("informe um numero inteiro positivo: ");
     scanf("%d", &N);
 
-    for (int i = 1; i <= N; i++) { 
-        for (int j = 1; j <= i; j++) {
+    if (N <= 0) {
+        printf("Numero invalido. Deve ser positivo.\n");
+        return 1;
+    }
+
+    while (num <= N) {
+        for (int i = 1; i <= linha && num <= N; i++) {
             printf("%d ", num);
-            num++; 
+            num++;
         }
         printf("\n");
+        linha++;
     }
 
     return 0;
 }
+
+
